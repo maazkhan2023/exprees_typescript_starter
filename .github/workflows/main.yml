@@ -13,10 +13,10 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - name: use Node.js 16.x
+      - name: use Node.js 18.16.0
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 18.16.0
       - name: npm Install
         run: npm i
       - name: format
