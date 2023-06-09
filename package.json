@@ -16,10 +16,14 @@
     "yarn": "please-use-npm"
   },
   "scripts": {
+    "docker": "npm run docker:image && npm run docker:run",
+    "docker:image": "docker build . -t node-app/latest",
+    "docker:run": "docker run --name node-app -p 3030:3030 -t node-app/latest",
+    "docker:stop": "docker stop node-app",
     "start": "node build/bin/www.js",
     "clean": "rm -rf build",
     "build": "npm run clean && concurrently npm:build:*",
-    "babel:compile": "npx babel src --extensions .ts --out-dir build --source-maps",
+    "build:compile": "npx babel src --extensions .ts --out-dir build --source-maps",
     "build:types": "tsc",
     "dev": "concurrently npm:dev:* --kill-others nodemon --exec \"node build/bin/www.js\"",
     "dev:compile": "npx babel src --extensions .ts --out-dir build --source-maps --watch",
