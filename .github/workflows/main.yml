@@ -4,13 +4,13 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]  
+    branches: [main]
   workflow_dispatch:
-    
+
 jobs:
   node-app-workflow:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js 18.16.0
@@ -25,4 +25,3 @@ jobs:
         run: npm run lint
       - name: build
         run: npm run build
-      
