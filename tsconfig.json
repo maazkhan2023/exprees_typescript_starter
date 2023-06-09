@@ -11,6 +11,53 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/bin/*": [
+        "bin/*"
+      ],
+      "@/config/*": [
+        "config/*"
+      ],
+      "@/constants/*": [
+        "constants/*"
+      ],
+      "@/controllers/*": [
+        "controllers/*"
+      ],
+      "@/env/*": [
+        "env/*"
+      ],
+      "@/interfaces/*": [
+        "interfaces/*"
+      ],
+      "@/middlewares/*": [
+        "middlewares/*"
+      ],
+      "@/models/*": [
+        "models/*"
+      ],
+      "@/repositories/*": [
+        "repositories/*"
+      ],
+      "@/routers/*": [
+        "routers/*"
+      ],
+      "@/schemas/*": [
+        "schemas/*"
+      ],
+      "@/security/*": [
+        "security/*"
+      ],
+      "@/services/*": [
+        "services/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
+      ],
+      "@/validations/*": [
+        "validations/*"
+      ]
+    }
   }
 }

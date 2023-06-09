@@ -1,5 +1,10 @@
+import 'module-alias/register'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import http from 'http'
 import App from '..'
+import logger from '@/utils/logger.util'
 
 const { app } = new App([])
 
@@ -31,11 +36,11 @@ const onError = (error: any) => {
 
   switch (error.code) {
     case 'EACCES':
-      console.error(`${bind} requires elevated privileges`)
+      logger.error(`${bind} requires elevated privileges`)
       process.exit(1)
       break
     case 'EADDRINUSE':
-      console.error(`${bind} is already in use`)
+      logger.error(`${bind} is already in use`)
       process.exit(1)
       break
     default:
@@ -46,7 +51,7 @@ const onError = (error: any) => {
 const onListening = () => {
   const addr = server.address()
   const bind = typeof addr === 'string' ? `Pipe ${addr}` : `Port ${addr?.port}`
-  console.info(`Listening on ${bind}`)
+  logger.info(`Listening on ${bind}`)
 }
 
 server.listen(port)
