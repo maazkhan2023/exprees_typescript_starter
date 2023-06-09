@@ -42,7 +42,7 @@ class App {
               code: ConstantHttpCode.OK,
               statusMsg: ConstantHttpReason.OK,
             },
-            msg: 'Hello world docker bro',
+            msg: ConstantMessage.API_WORKING,
           })
         } catch (error: any) {
           return next(
